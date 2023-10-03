@@ -209,6 +209,7 @@
     -webkit-text-stroke-color: yellow;
     font-size: 90px;
     position: absolute;
+    z-index: 1;
     font-family: 'Dance';
     letter-spacing: 1rem;
 }
