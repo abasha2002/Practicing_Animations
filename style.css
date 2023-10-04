@@ -17,9 +17,6 @@
     .section2 h1{
         font-size: 30px !important;
     }
-    .section2 h1 .break{
-        display: block !important;
-    }
 }
 
 .section1{
@@ -30,6 +27,7 @@
     position: relative;
     background-color: darkcyan;
 }
+
 .text1{
     position: absolute;
     top: 100px;
@@ -54,7 +52,21 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: blueviolet;
     font-family: 'Dance';
+    animation: colors 3s linear infinite;
+    animation-delay: calc(var(--i) * 0.3s);
 }
+
+@keyframes colors {
+    0%, 100%{
+        filter: hue-rotate(0deg);
+        left: 50%;
+    }
+    50%{
+        filter: hue-rotate(360deg);
+        left: 55%;
+    }
+}
+
 .char1 { transform: rotate(-90deg); }
 .char2 { transform: rotate(-66deg); }
 .char3 { transform: rotate(-54deg); }
@@ -202,20 +214,45 @@
     height: 100vh;
     background: purple;
     position: relative;
+    animation: changeBG 3s linear infinite;
 }
-.section2 h1{
+
+@keyframes changeBG {
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(180deg);
+    }
+}
+
+.section2 p{
     color: violet;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: yellow;
     font-size: 90px;
-    position: absolute;
-    z-index: 1;
     font-family: 'Dance';
     letter-spacing: 1rem;
+    z-index: 1;
 }
-.section2 h1 .break{
-    display: none;
+.section2 .animation p{
+    animation: animateTEXT 2s linear infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+    cursor: pointer;
 }
+
+@keyframes animateTEXT {
+    0%{
+        transform: rotateX(0deg) scale(1);
+    }
+    50%{
+        transform: rotateX(90deg) scale(2);
+    }
+    100%{
+        transform: rotateX(0deg) scale(1);
+    }
+}
+
 .section2 .bounce{
     width: 400px;
     height: 400px;
